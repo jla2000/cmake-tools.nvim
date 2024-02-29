@@ -7,7 +7,7 @@ local _overseer = {
 }
 
 function _overseer.show(opts)
-  overseer.open()
+  overseer.open({ enter = false })
 end
 
 function _overseer.close(opts)
