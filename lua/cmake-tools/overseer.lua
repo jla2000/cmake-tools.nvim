@@ -7,7 +7,6 @@ local _overseer = {
 }
 
 function _overseer.show(opts)
-  vim.print("overseer open")
   overseer.open({ enter = false })
 end
 
@@ -45,9 +44,8 @@ function _overseer.run(cmd, env_script, env, args, cwd, opts, on_exit, on_output
   if opts.on_new_task ~= nil then
     opts.on_new_task(_overseer.job)
   end
-  vim.print(_overseer.job)
-  vim.print("overseer start")
   _overseer.job:start()
+  _overseer.show()
 end
 
 function _overseer.has_active_job(opts)
