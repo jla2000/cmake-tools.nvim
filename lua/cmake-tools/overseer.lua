@@ -45,6 +45,7 @@ function _overseer.run(cmd, env_script, env, args, cwd, opts, on_exit, on_output
     opts.on_new_task(_overseer.job)
   end
   _overseer.job:start()
+  _overseer.close()
   _overseer.show()
 end
 
